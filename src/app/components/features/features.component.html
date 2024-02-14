@@ -4,7 +4,7 @@
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Angular Version 2
+          Angular Version-2
         </mat-panel-title>
         <mat-panel-description>
             It was released in September 2016
@@ -25,7 +25,7 @@
       </mat-expansion-panel-header>
       
       <div class="row bg-dark text-white m-2">
-        <h4>Components</h4>
+        <h2>Components</h2>
         <p>Components are the logical piece of code contains the bussiness logic.</p>
             <p>Each component consist of</p>
              <p>Template -> Contains View displayed on the Dom.</p>
@@ -38,7 +38,7 @@
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Modules</h4>
+        <h2>Modules</h2>
         <p>Modules are the building block of application they contains the information of Components,Service and if they are using other module then there information</p>
         <p>Every application consist of at least one module that is Root Module that bootstraps our application</p>
         <p>we have Feature modules These modules they represent features or functionalities within our application They import necessary components, directives, services, and pipes specific to that feature</p>
@@ -132,7 +132,7 @@
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Angular Version 4
+          Angular Version-4
         </mat-panel-title>
         <mat-panel-description>
             It was released in March 2017
@@ -220,10 +220,62 @@
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          This is the expansion title
+          Angular Version-5
         </mat-panel-title>
         <mat-panel-description>
-          This is a summary of the content
+          <!-- This is a summary of the content -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Version-6
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- This is a summary of the content -->
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Version-7
+        </mat-panel-title>
+        <mat-panel-description>
+          <!-- This is a summary of the content -->
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>This is the primary content of the panel.</p>

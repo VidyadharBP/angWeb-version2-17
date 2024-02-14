@@ -1,0 +1,246 @@
+
+<!-- Angular version 2 -->
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Version 2
+        </mat-panel-title>
+        <mat-panel-description>
+            It was released in September 2016
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <h4>It is no longer actively supported or maintained</h4>
+      <p>Before Angular 2 AngularJs was used and it has features like controllers, $scope, $scope variables, etc in angular this features are replaced by Components, Directives</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            Angular Version 2 Features
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      
+      <div class="row bg-dark text-white m-2">
+        <h4>Components</h4>
+        <p>Components are the logical piece of code contains the bussiness logic.</p>
+            <p>Each component consist of</p>
+             <p>Template -> Contains View displayed on the Dom.</p>
+            <p> Class -> Contains the bussiness logic properties and methods and this will support the View</p>
+            <p>MetaData -> It tells about extra information about the component like template,style etc</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[0].component}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Modules</h4>
+        <p>Modules are the building block of application they contains the information of Components,Service and if they are using other module then there information</p>
+        <p>Every application consist of at least one module that is Root Module that bootstraps our application</p>
+        <p>we have Feature modules These modules they represent features or functionalities within our application They import necessary components, directives, services, and pipes specific to that feature</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[1].module}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Directives</h4>
+        <p>Directives are the custom html element they are used to add or remove the element and we can make the change on the element</p>
+        <p>Directives will power up the html</p>
+        <div class="row bg-dark text-white m-2">
+            <h4>*ngIf</h4>
+            <p>The ngIf will used to add or remove the element from the Dom it will add the element if its get true value else it will remove the element</p>
+                <mat-card class="text-black">
+                    <mat-card-content> 
+                        <pre>{{this.angular2Data[0].ver2Component[2].directivengIf}}</pre>
+                    </mat-card-content>
+                  </mat-card>    
+        </div>   
+        <div class="row bg-dark text-white m-2">
+            <h4>*ngFor</h4>
+            <p>The ngFor will used to display the iterated data over the element in the Dom it will add the element based on condition on the for loop</p>
+                <mat-card class="text-black">
+                    <mat-card-content> 
+                        <pre>{{this.angular2Data[0].ver2Component[3].directivengfor}}</pre>
+                    </mat-card-content>
+                  </mat-card>    
+        </div>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Data Display</h4>
+        <p> To display the value of the properties of the class in the HTML</p>
+        <p>We will use</p>
+        <p>[value] = ”username” This is used to bind the username to the input element value property.</p>
+        <p>(input) = ”expression” This is a way of binding an expression to the input elements input event</p>
+        <p>$event  An expression exposed in event bindings by Angular, which has the value of the events payload</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[4].dataDisplay}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Forms</h4>
+        <p>Angular 2 we can also design forms which use two-way binding by using the ngModel directive</p>
+        <p>The ngModel directive is used to bind the object of the class to the separate elements on the form.</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[5].formData}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Services</h4>
+        <p>Services are mainly used for when a common functionality needs to be provided to a various Components or modules </p>
+        <p>First we need to create a Service class then we need to import that in the providers array of app.module.ts</p>
+        <p>After that in which component we need that service we need to inject that in the constructors</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[6].service}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Routing</h4>
+        <p>Routing helps user to navigate one page to another page</p>
+        <p>For routing we will create routes array and it contains objects with path and component like witch path what component need to navigate</p>
+        <p>we need to provide space to open routed component for that we need to use "router-outlet" element provided by Angular</p>
+        <p>we need to use "routerLink" to give link of paths provided by the Angular</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular2Data[0].ver2Component[7].routing}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Other Features in Angular 2</h4>
+        <h5>Improved Performance : <p>It provide faster performance due t its module structure</p></h5>
+        <h5>Mobile Compatibility : <p> It is mobile-friendly we can create applications that can be easily accessed on mobile devices</p></h5>
+        <h5>Improved Dependency Injection</h5>
+        <h5>Simplified Routing</h5>  
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular Version-4 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Version 4
+        </mat-panel-title>
+        <mat-panel-description>
+            It was released in March 2017
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p> Angular 4 is almost the same as Angular 2. Angular 2 application will work without any issues with Angular 4</p>
+      <h4>Why Angular4 and Not Angular3?</h4>
+      <p>The Angular team faced some versioning issues internally with their modules and due to the conflict they had to move on and release the next version of Angular the Angular4.</p>
+      <p>Angular4 uses TypeScript 2.2 version</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Angular Version-4 Features
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h4>To install Angular 4, the Angular team came up with Angular CLI</h4>
+        <p>To get started with the installation, we first need to make sure we have nodejs and npm installed and we need to use following commands</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[0].commands}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>CLI Commands</h4>
+        <p>Angular Cli provies commands to create Component, Service, Modules, Directive, Pipes </p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[1].cliCmd}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>*ngIf</h4>
+        <p>Angular2 supported only the if condition but in Angular4 it supports if and else codition also</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[2].ifElse}}</pre>
+                </mat-card-content>
+                <p class="row bg-dark text-white m-2 p-3">Output : Condition is invalid</p>
+              </mat-card> 
+              <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[3].Else}}</pre>
+                </mat-card-content>
+                <p class="row bg-dark text-white m-2 p-3">Output : Condition is valid</p>
+              </mat-card>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>as keyword in for loop</h4>
+        <p>With the help of as keyword we can store the value</p>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[4].asFor}}</pre>
+                </mat-card-content>
+                <p class="row bg-dark text-white m-2 p-3">Output :  Months: ['January', 'February', 'March', 'April', 'May', 'June']  Total: 5</p>
+              </mat-card>       
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Animation Package</h4>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <pre>{{this.angular4Data[0].version4[5].animation}}</pre>
+                </mat-card-content>
+              </mat-card>       
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h4>Template</h4>
+            <mat-card class="text-black">
+                <mat-card-content> 
+                    <p>Angular 4 uses "ng-template"  tag instead of "template" is because of the name conflict of the "template" tag with the html "template" standard tag. It will deprecate completely going ahead. This is one of the major changes in Angular 4</p> 
+                </mat-card-content>
+              </mat-card>       
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  
+
+  

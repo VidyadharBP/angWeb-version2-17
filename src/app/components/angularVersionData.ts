@@ -274,4 +274,106 @@ export const angular4 = [
         ]
     }
 ]
+
+export const angular5 = [
+    {
+        version5:[
+            {
+                "httpclient":`import { HttpClientModule } from '@angular/common/http';`
+            },
+            {
+                "alias":`
+                //With aliases, defineing components in shared module:
+                
+                export const header = HeaderComponent;
+                export const footer = FooterComponent;
+                export const sidebar = SidebarComponent;
+
+                //Then our import stamemts become
+
+                import { header, footer, sidebar } from './shared';
+                `
+            },
+            {
+                "localeSupport":`
+                //before angular5 
+                import { NgModule } from '@angular/core';
+                import { CommonModule, DeprecatedI18NPipesModule } from '@angular/common';
+
+                @NgModule({
+                    imports: [CommonModule,// import deprecated module after DeprecatedI18NPipesModule]
+                })
+                export class AppModule { }
+                `
+            },
+            {
+                "decSupport":`
+                //before angular5
+
+                Component({
+                    provider: [{provide: 'token', useValue: calculated()}]
+                  })
+                  export class MyClass {}
+
+                // In angualr5 
+                Component({
+                    provider: [{provide: 'token', useFactory: () => null}]
+                  })
+                  export class MyClass {} 
+                `
+            },
+            {
+                "whiteSpace":`
+                // app.component.ts
+
+                import { Component } from '@angular/core';
+
+                @Component({
+                    selector: 'app-root',
+                    templateUrl: './app.component.html',
+                    styleUrl: './app.component.scss',
+                preserveWhitespaces:true
+            })
+            export class AppComponent { }
+
+
+        /* If you want to restrict them throughout the application level then below
+         is the sample code in config.json file. */
+  
+            "angularCompilerOptions": { 
+                "preserveWhitespaces": false 
+            }
+             `
+             } 
+        ]
+    }
+]
+
+export const angualr6 = [
+    {
+        "version6":[
+            {
+                "service":`
+                // In service class
+
+                import { Injectable } from '@angular/core';
+                @Injectable({
+                        providedIn: 'root'
+                    })
+                export class MyService {
+                    // ...
+                }
+                `
+             },
+             {
+                "ngTemp":`
+                // templete with *ngIf and else
+
+                <span *ngIf="isavailable; else condition1">Condition is valid.</span>
+                <ng-template #condition1>Condition is invalid</ng-template>
+                `
+             }
+        ]
+    }
+]
     

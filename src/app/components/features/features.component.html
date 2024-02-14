@@ -3,20 +3,20 @@
 <mat-accordion>
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-2
         </mat-panel-title>
-        <mat-panel-description>
+        <mat-panel-description class="fs-6">
             It was released in September 2016
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <h4>It is no longer actively supported or maintained</h4>
-      <p>Before Angular 2 AngularJs was used and it has features like controllers, $scope, $scope variables, etc in angular this features are replaced by Components, Directives</p>
+      <p class="fs-6">It is no longer actively supported or maintained</p>
+      <p class="fs-6">Before Angular 2 AngularJs was used and it has features like controllers, $scope, $scope variables, etc in angular this features are replaced by Components, Directives</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
             Angular Version 2 Features
         </mat-panel-title>
         <!-- <mat-panel-description>
@@ -26,12 +26,12 @@
       
       <div class="row bg-dark text-white m-2">
         <h2>Components</h2>
-        <p>Components are the logical piece of code contains the bussiness logic.</p>
-            <p>Each component consist of</p>
-             <p>Template -> Contains View displayed on the Dom.</p>
-            <p> Class -> Contains the bussiness logic properties and methods and this will support the View</p>
-            <p>MetaData -> It tells about extra information about the component like template,style etc</p>
-            <mat-card class="text-black">
+        <p class="fs-6">Components are the logical piece of code contains the bussiness logic each component consist of Template, Class, MetaData</p>
+             <p class="fs-6">Template : Contains View displayed on the Dom. <br>
+              Class : Contains the bussiness logic properties and methods and this will support the View<br>
+              MetaData : It tells about extra information about the component like template,style etc
+            </p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[0].component}}</pre>
                 </mat-card-content>
@@ -39,32 +39,32 @@
       </div>
       <div class="row bg-dark text-white m-2">
         <h2>Modules</h2>
-        <p>Modules are the building block of application they contains the information of Components,Service and if they are using other module then there information</p>
-        <p>Every application consist of at least one module that is Root Module that bootstraps our application</p>
-        <p>we have Feature modules These modules they represent features or functionalities within our application They import necessary components, directives, services, and pipes specific to that feature</p>
-            <mat-card class="text-black">
+        <p class="fs-6">Modules are the building block of application they contains the information of Components,Service and if they are using other module then there information</p>
+        <p class="fs-6">Every application consist of at least one module that is Root Module that bootstraps our application</p>
+        <p class="fs-6">we have Feature modules These modules they represent features or functionalities within our application They import necessary components, directives, services, and pipes specific to that feature</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[1].module}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Directives</h4>
-        <p>Directives are the custom html element they are used to add or remove the element and we can make the change on the element</p>
-        <p>Directives will power up the html</p>
+        <h2>Directives</h2>
+        <p class="fs-6">Directives are the custom html element they are used to add or remove the element and we can make the change on the element</p>
+        <p class="fs-6">Directives will power up the html</p>
         <div class="row bg-dark text-white m-2">
-            <h4>*ngIf</h4>
-            <p>The ngIf will used to add or remove the element from the Dom it will add the element if its get true value else it will remove the element</p>
-                <mat-card class="text-black">
+            <h2>*ngIf</h2>
+            <p class="fs-6">The ngIf will used to add or remove the element from the Dom it will add the element if its get true value else it will remove the element</p>
+                <mat-card class="text-black fs-6">
                     <mat-card-content> 
                         <pre>{{this.angular2Data[0].ver2Component[2].directivengIf}}</pre>
                     </mat-card-content>
                   </mat-card>    
         </div>   
         <div class="row bg-dark text-white m-2">
-            <h4>*ngFor</h4>
-            <p>The ngFor will used to display the iterated data over the element in the Dom it will add the element based on condition on the for loop</p>
-                <mat-card class="text-black">
+            <h2>*ngFor</h2>
+            <p class="fs-6">The ngFor will used to display the iterated data over the element in the Dom it will add the element based on condition on the for loop</p>
+                <mat-card class="text-black fs-6">
                     <mat-card-content> 
                         <pre>{{this.angular2Data[0].ver2Component[3].directivengfor}}</pre>
                     </mat-card-content>
@@ -72,57 +72,57 @@
         </div>   
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Data Display</h4>
-        <p> To display the value of the properties of the class in the HTML</p>
-        <p>We will use</p>
-        <p>[value] = ”username” This is used to bind the username to the input element value property.</p>
-        <p>(input) = ”expression” This is a way of binding an expression to the input elements input event</p>
-        <p>$event  An expression exposed in event bindings by Angular, which has the value of the events payload</p>
-            <mat-card class="text-black">
+        <h2>Data Display</h2>
+        <p class="fs-6"> To display the value of the properties of the class in the HTML</p>
+        <p class="fs-6">We will use</p>
+        <p class="fs-6">[value] = ”username” This is used to bind the username to the input element value property.</p>
+        <p class="fs-6">(input) = ”expression” This is a way of binding an expression to the input elements input event</p>
+        <p class="fs-6">$event  An expression exposed in event bindings by Angular, which has the value of the events payload</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[4].dataDisplay}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Forms</h4>
-        <p>Angular 2 we can also design forms which use two-way binding by using the ngModel directive</p>
-        <p>The ngModel directive is used to bind the object of the class to the separate elements on the form.</p>
-            <mat-card class="text-black">
+        <h2>Forms</h2>
+        <p class="fs-6">Angular 2 we can also design forms which use two-way binding by using the ngModel directive</p>
+        <p class="fs-6">The ngModel directive is used to bind the object of the class to the separate elements on the form.</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[5].formData}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Services</h4>
-        <p>Services are mainly used for when a common functionality needs to be provided to a various Components or modules </p>
-        <p>First we need to create a Service class then we need to import that in the providers array of app.module.ts</p>
-        <p>After that in which component we need that service we need to inject that in the constructors</p>
-            <mat-card class="text-black">
+        <h2>Services</h2>
+        <p class="fs-6">Services are mainly used for when a common functionality needs to be provided to a various Components or modules </p>
+        <p class="fs-6">First we need to create a Service class then we need to import that in the providers array of app.module.ts</p>
+        <p class="fs-6">After that in which component we need that service we need to inject that in the constructors</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[6].service}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Routing</h4>
-        <p>Routing helps user to navigate one page to another page</p>
-        <p>For routing we will create routes array and it contains objects with path and component like witch path what component need to navigate</p>
-        <p>we need to provide space to open routed component for that we need to use "router-outlet" element provided by Angular</p>
-        <p>we need to use "routerLink" to give link of paths provided by the Angular</p>
-            <mat-card class="text-black">
+        <h2>Routing</h2>
+        <p class="fs-6">Routing helps user to navigate one page to another page</p>
+        <p class="fs-6">For routing we will create routes array and it contains objects with path and component like witch path what component need to navigate</p>
+        <p class="fs-6">we need to provide space to open routed component for that we need to use "router-outlet" element provided by Angular</p>
+        <p class="fs-6">we need to use "routerLink" to give link of paths provided by the Angular</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[7].routing}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Other Features in Angular 2</h4>
-        <h5>Improved Performance : <p>It provide faster performance due t its module structure</p></h5>
-        <h5>Mobile Compatibility : <p> It is mobile-friendly we can create applications that can be easily accessed on mobile devices</p></h5>
-        <h5>Improved Dependency Injection</h5>
-        <h5>Simplified Routing</h5>  
+        <h2>Other Features in Angular 2</h2>
+        <h3>Improved Performance : <p class="fs-6">It provide faster performance due t its module structure</p></h3>
+        <h3>Mobile Compatibility : <p class="fs-6"> It is mobile-friendly we can create applications that can be easily accessed on mobile devices</p></h3>
+        <h3>Improved Dependency Injection</h3>
+        <h3>Simplified Routing</h3>  
       </div>
     </mat-expansion-panel>
   </mat-accordion>
@@ -131,22 +131,22 @@
   <mat-accordion class="m-3">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-4
         </mat-panel-title>
-        <mat-panel-description>
+        <mat-panel-description class="fs-6">
             It was released in March 2017
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p> Angular 4 is almost the same as Angular 2. Angular 2 application will work without any issues with Angular 4</p>
-      <h4>Why Angular4 and Not Angular3?</h4>
-      <p>The Angular team faced some versioning issues internally with their modules and due to the conflict they had to move on and release the next version of Angular the Angular4.</p>
-      <p>Angular4 uses TypeScript 2.2 version</p>
+      <p class="fs-6"> Angular 4 is almost the same as Angular 2. Angular 2 application will work without any issues with Angular 4</p>
+      <h2>Why Angular4 and Not Angular3?</h2>
+      <p class="fs-6">The Angular team faced some versioning issues internally with their modules and due to the conflict they had to move on and release the next version of Angular the Angular4.</p>
+      <p class="fs-6">Angular4 uses TypeScript 2.2 version</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-4 Features
         </mat-panel-title>
         <!-- <mat-panel-description>
@@ -154,120 +154,217 @@
         </mat-panel-description> -->
       </mat-expansion-panel-header>
       <div class="row bg-dark text-white m-2">
-        <h4>To install Angular 4, the Angular team came up with Angular CLI</h4>
-        <p>To get started with the installation, we first need to make sure we have nodejs and npm installed and we need to use following commands</p>
-            <mat-card class="text-black">
+        <h2>To install Angular 4, the Angular team came up with Angular CLI</h2>
+        <p class="fs-6">To get started with the installation, we first need to make sure we have nodejs and npm installed and we need to use following commands</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[0].commands}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>CLI Commands</h4>
-        <p>Angular Cli provies commands to create Component, Service, Modules, Directive, Pipes </p>
-            <mat-card class="text-black">
+        <h2>CLI Commands</h2>
+        <p class="fs-6">Angular Cli provies commands to create Component, Service, Modules, Directive, Pipes </p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[1].cliCmd}}</pre>
                 </mat-card-content>
               </mat-card>    
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>*ngIf</h4>
-        <p>Angular2 supported only the if condition but in Angular4 it supports if and else codition also</p>
-            <mat-card class="text-black">
+        <h2>*ngIf</h2>
+        <p class="fs-6">Angular2 supported only the if condition but in Angular4 it supports if and else codition also</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[2].ifElse}}</pre>
                 </mat-card-content>
-                <p class="row bg-dark text-white m-2 p-3">Output : Condition is invalid</p>
+                <p class="row bg-dark text-white m-2 p-3 fs-6">Output : Condition is invalid</p>
               </mat-card> 
-              <mat-card class="text-black">
+              <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[3].Else}}</pre>
                 </mat-card-content>
-                <p class="row bg-dark text-white m-2 p-3">Output : Condition is valid</p>
+                <p class="row bg-dark text-white m-2 p-3 fs-6">Output : Condition is valid</p>
               </mat-card>   
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>as keyword in for loop</h4>
-        <p>With the help of as keyword we can store the value</p>
-            <mat-card class="text-black">
+        <h2>as keyword in for loop</h2>
+        <p class="fs-6">With the help of as keyword we can store the value</p>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[4].asFor}}</pre>
                 </mat-card-content>
-                <p class="row bg-dark text-white m-2 p-3">Output :  Months: ['January', 'February', 'March', 'April', 'May', 'June']  Total: 5</p>
+                <p class="row bg-dark text-white m-2 p-3 fs-6">Output :  Months: ['January', 'February', 'March', 'April', 'May', 'June']  Total: 5</p>
               </mat-card>       
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Animation Package</h4>
-            <mat-card class="text-black">
+        <h2>Animation Package</h2>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular4Data[0].version4[5].animation}}</pre>
                 </mat-card-content>
               </mat-card>       
       </div>
       <div class="row bg-dark text-white m-2">
-        <h4>Template</h4>
-            <mat-card class="text-black">
+        <h2>Template</h2>
+            <mat-card class="text-black fs-6">
                 <mat-card-content> 
-                    <p>Angular 4 uses "ng-template"  tag instead of "template" is because of the name conflict of the "template" tag with the html "template" standard tag. It will deprecate completely going ahead. This is one of the major changes in Angular 4</p> 
+                    <p class="fs-6">Angular 4 uses "ng-template"  tag instead of "template" is because of the name conflict of the "template" tag with the html "template" standard tag. It will deprecate completely going ahead. This is one of the major changes in Angular 4</p> 
                 </mat-card-content>
               </mat-card>       
       </div>
     </mat-expansion-panel>
   </mat-accordion>
 
+  <!-- Angular Version-5 -->
   <mat-accordion class="m-3">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-5
         </mat-panel-title>
-        <mat-panel-description>
-          <!-- This is a summary of the content -->
+        <mat-panel-description class="fs-6">
+          It was released in November 2017
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
+      <p class="fs-6">This release focused on making Angular application to reduce the bundle size and faster to use.</p>
+      <p class="fs-6">It supports TypeScript 2.5 </p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
+        <mat-panel-title class="fs-5">
+          Angular Version 5 Features
         </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <div class="row bg-dark text-white m-2">
+        <h2>Http Deprecated and HttpClient recommended to use</h2>
+        <p class="fs-6">The angular/http module was used for making HTTP requests in Angular applications. The Angular team has now deprecated Http in version 5. The HttpClient API from angular/common/http package that is now recommended for use.</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular5Data[0].version5[0].httpclient}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Support for Multiple Export Alias</h2>
+        <p class="fs-6">In angular we could only export items individually from a module using their original names this could lead to lengthy or repetitive imports in other components, especially when using components with long or similar names. Export aliases offered a way to create shorter or more convenient alternatives names to imports.</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular5Data[0].version5[1].alias}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Internationalized Number, Date, and Currency Pipes</h2>
+        <p class="fs-6">Angular 5 provides several built-in pipes designed to format numbers, dates, and currencies according to user locale settings and it increase standardization across browsers and eliminate the need for i18n polyfills</p>
+        <p class="fs-6">To provide locale support and configurations for old pipe before angular5 we need to import the DeprecatedI18NPipesModule after the CommonModule</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular5Data[0].version5[2].localeSupport}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Improved Decorator Support</h2>
+        <p class="fs-6">It supports to reduce the expression for lambdas, and the value of useValue, useFactory, and data in object literals lambda can be used instead of a named function </p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular5Data[0].version5[3].decSupport}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Build Optimization</h2>
+        <p class="fs-6"> Angular team focused on making Angular 5 faster, smaller and easier to use, production builds created with the Angular CLI it will apply the build optimizer by default and it will removes Angular decorators from your app's runtime codes thereby reducing the size of your bundle and increasing the boot speed of your application</p>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular Universal State Transfer API and DOM Support</h2>
+        <p class="fs-6">Angular Universal is a project focused on helping developers to perform server side rendering and rendering the Angular applications on the server and then bootstrapping on top of the generated HTML</p> 
+        <p class="fs-6" >Two modules have been adde to the Angular Universal ServerTransferStateModule and BrowserTransferModule These modules allow to generate information as part of rendering with platform-server and then transfer it to the client side to avoid re-generation of the same information</p>  
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Faster Compiler</h2>
+        <p class="fs-6">Improved the Angular compiler to support incremental compilation. This provides faster rebuilds, especially for production builds and builds with AOT. also added features to our Decorators and made it possible to ship smaller bundles by removing whitespace</p>
+      </div>
+      <!-- <div class="row bg-dark text-white m-2">
+        <h2>Forms Validation in Angular 5</h2>
+        <p class="fs-6">Improved the Angular compiler to support incremental compilation. This provides faster rebuilds, especially for production builds and builds with AOT. also added features to our Decorators and made it possible to ship smaller bundles by removing whitespace</p>
+      </div> -->
+      <div class="row bg-dark text-white m-2">
+        <h2>Preserve Whitespace</h2>
+        <p class="fs-6">Now we can choose whether or not to restrict newlines, tabs, and white spaces coming from our components and our application</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular5Data[0].version5[4].whiteSpace}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 
+  <!-- Angular Version-6 -->
   <mat-accordion class="m-3">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-6
         </mat-panel-title>
-        <mat-panel-description>
-          <!-- This is a summary of the content -->
+        <mat-panel-description class="fs-6">
+          It was released in May 2018
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
+      <p class="fs-6"> This release confirms that the new version is much lighter, faster, and easier and it makes development easier</p>
+      <p class="fs-6">It supports TypeScript version 2.7</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
+        <mat-panel-title class="fs-5">
+          Angular Version 6 Features
         </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular Elements</h2>
+        <p class="fs-6">The Angular Elements package will gives the ability to create an Angular component and then use that component as a web component which can be used in any HTML page (even if that page is not using the Angular framework) in other environments. It actually takes an Angular component and then wraps it within a custom element, such as a DOM element, so that we can use our Angular component in other projects which do not use Angular.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>ng update & ng add commands</h2>
+        <p class="fs-6">ng update: Updates Angular CLI and project packages to newer versions.</p>
+        <p class="fs-6">ng add: Integrates third-party libraries and schematics into our project with pre-defined configurations.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Service Providers within Service</h2>
+        <p class="fs-6">Previously, we are using app.module.ts providers to declare the service and use as singleton in througth the Application</p>
+        <p class="fs-6">Angular 6 allowed defining providers directly within the service using providedIn: 'root' and make them as a singleton</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular6Data[0].version6[0].service}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>ng-template instead of template directive</h2>
+        <p class="fs-6">The "template" element was depreciated that was launched in Angular 4 Instead of using "template", now we need to use "ng-tempalate" It  offering better integration with structural directives like *ngFor and *ngIf</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular6Data[0].version6[1].ngTemp}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2> Ivy: New Rendering Engine</h2>
+        <p class="fs-6">In Angular 6 introduced their third rendering engine called Ivy. Ivy is the next generation Angular rendering engine In previous versions of Angular view engine for rendering purposes</p>
+        <p class="fs-6">Angular compiles our templates into equivalent TypeScript code and then that TypeScript code is compiled to JavaScript and then the result is rendered to users.  So Ivy renderer is the new rendering engine which is basically designed to support backward compatibility with existing renderers and then also focused to improve the speed of rendering and it also optimized the size of the final package In Angular, it will not be the default renderer but we can manually enable it using the compiler options.</p>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Service Worker Support</h2>
+        <p class="fs-6">Service workers are basically scripts which run in the web browser and manage to cache an application. Service workers were first introduced in Angular 5. In Angular 6, service workers come with some bug fixes, including some new functionalities. So when we deploy the latest version of the application, we may need to deactivate or uninstall the existing service workers. In Angular 5, there is no straightforward option for doing this, but Angular 6 brings this functionality with the new script file named safety-worker.js, which is actually a part of the production bundle which helps us to unregister the existing service worker</p>   
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 
+  <!-- Angular Version-7 -->
   <mat-accordion class="m-3">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>

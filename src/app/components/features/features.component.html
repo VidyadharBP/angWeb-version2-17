@@ -368,26 +368,131 @@
   <mat-accordion class="m-3">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="fs-5">
           Angular Version-7
         </mat-panel-title>
-        <mat-panel-description>
-          <!-- This is a summary of the content -->
+        <mat-panel-description class="fs-6">
+          It was released in October 2018
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
+      <p class="fs-6">Angular 7, focused on improving developer experience and performance rather than introducing major new features.</p>
+        <p class="fs-6"> It supports TypeScript version 3.1</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
+        <mat-panel-title class="fs-5">
+         Angular Version 7 Features
         </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>CLI Prompts</h2>
+        <p class="fs-6">The Angular CLI provides interactive prompts, improving the setup process. For example, when we creating a new project, the CLI asks whether you want routing, a stylesheet format, and a testing framework, streamlining configuration</p>
+        <p class="fs-6">The CLI will now prompt users when running common commands like ng new or ng add angular/material to help you discover built-in features like routing or SCSS support.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular Material & the CDK</h2>
+        <p class="fs-6">Angular Material and the Component Dev Kit (CDK) received minor visual updates reflecting changes to Material Design specifications.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Virtual Scrolling</h2>
+        <p class="fs-6">This feature renders only visible items in large lists, boosting performance. Imagine a long list of products in an e-commerce app. With virtual scrolling, only the products currently on the screen are loaded, improving responsiveness</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular7Data[0].version7[0].virtualScr}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Drag and Drop</h2>
+        <p class="fs-6">Angular 7 comes with another feature angular/cdk/drag-drop module where you can transfer the elements between the lists, re-order or re-arrange them</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Application Performance</h2>
+        <p class="fs-6">Angular 7 improved build times and bundle sizes by updating dependencies and optimizing the build process. This leads to faster loading applications and a smoother user experience.</p>
+        <p class="fs-6">Many developers were including the reflect-metadata polyfill in production, which is only needed in development To fix this,Angular7 will automatically remove this from your polyfills.ts file, and then include it as a build step when building your application in JIT mode, removing this polyfill from production builds by default and to speed up the performance new applications will warn when the initial bundle is more than 2MB and will error at 5MB which user can modify it in angular.json file</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular Do-Bootstrap</h2>
+        <p class="fs-6">Angular 7 added a new life-cycle hook (ngDoBootstrap) and interface (DoBootstrap),These are the latest bootstrap modules improve the usability of your application</p>   
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version-8 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-8
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in May 2019 
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
+      <p class="fs-6"> Angular framework has bought several attractive features that made Angular 8 unique compared to its previous versions and it has arrived with bunch of workflow and a new set of powerful features</p>
+        <p class="fs-6"> It supports TypeScript version 3.4</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 8 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Differential Loading by Default</h2>
+        <p class="fs-6"> This improved performance by creating separate bundles for legacy JavaScript (ES5) and modern JavaScript (ES2015+). Browsers automatically load the appropriate bundle, leading to faster loading times and smaller app sizes.When user loads application into browser, the browser decide which build to load by it’s own capabilities.</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular8Data[0].version8[0].defaultLoad}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Lazy Loading with Dynamic Imports</h2>
+        <p class="fs-6">Lazy loading is based on the concepts of Angular Routing it helps to bring down the size of large files by lazily loading the modules that are required. In previous angular versions, the route configuration uses the property "loadChildren" which accepts a string and if there was a wrong module name or any typo while writing the code, Angular would not consider it wrong and accept whatever value was there as a string until we try building it So to overcome this it added the support for dynamic imports in router configuration</p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular8Data[0].version8[1].lazyLoad}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Web workers</h2>
+        <p class="fs-6">Web workers are useful to do CPU-intensive processing. The worker thread can perform tasks without interfering with the user interface which handle CPU-intensive tasks in the background, improving responsiveness. </p>
+            <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular8Data[0].version8[2].webWorkers}}</pre>
+                </mat-card-content>
+              </mat-card>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>CLI workflow improvements</h2>
+        <p class="fs-6">The Angular CLI is continuously improving, and now the ng-build, ng-test and ng-run are equipped to be extended by 3rd-party libraries and tool.</p>
+        <p class="fs-6">Example : Angular Firebase <br>Angular have officially added support for firebase and now we can deploy our application using the Angular CLI.<br>ng run [PROJECT_NAME]:deploy</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2> No More support for angular/http package</h2>
+        <p class="fs-6">The support of angular/http package is removed. Instead of this package we have to use angular/common/http package.</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2> Ivy Renderer </h2>
+        <p class="fs-6"> This introduced a new compiler with potential performance improvements and tree-shaking capabilities (removing unused code). It was available as an opt-in preview in Angular 8.</p> 
+        <mat-card class="text-black">
+          <mat-card-content> 
+              <p class="fs-6">Advantages of Angular 8 Ivy</p>
+              <ul>
+                <li>Smaller bundles</li>
+              <li>Decreased payload size</li>
+              <li>Pre-compiled code</li>
+              <li>Faster rebuild times</li>
+              <li>Improved template type checking</li>
+              <li>Faster rebuild times</li>
+              </ul>
+          </mat-card-content>
+        </mat-card>   
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
   

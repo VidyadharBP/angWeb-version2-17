@@ -376,4 +376,83 @@ export const angualr6 = [
         ]
     }
 ]
-    
+
+export const angular7 = [
+    {
+        "version7":[
+            {
+                "virtualScr":`
+
+                import { CdkVirtualScrollViewportModule } from '@angular/cdk/scrolling';
+                
+                @NgModule({
+                imports: [
+                    // ... other imports
+                    CdkVirtualScrollViewportModule
+                ],
+                })
+            export class AppModule { }
+
+            // In html  
+            *cdkVirtualFor directive to iterate over your data source
+            
+                <cdk-virtual-scroll-viewport itemSize="50">
+                <div *cdkVirtualFor="let item of items">{{ item.name }}</div>
+                </cdk-virtual-scroll-viewport>
+                `
+            }
+        ]
+    }
+]
+
+export const angular8 = [
+    {
+        "version8":[
+            {
+                "defaultLoad":`
+                tsconfig.json
+                {
+                    "compilerOptions"{
+                       ...
+                      "module":"esnext",
+                      "moduleResolution":"node",
+                        ...
+                      "target":"es2015", // for disable replace with es5
+                }
+
+                // At runtime, the browser uses attributes on the script tag to load the right bundle.
+                <script type="module" src="…"> // Modern JS
+                <script nomodule src="…"> // Legacy JS
+                `
+            },
+            {
+                "lazyLoad":`
+                // before Angular 8
+                {path: '/admin', loadChildren: './admin/admin.module#AdminModule'}
+
+                // in Angular 8 dynamic import added
+                {path: '/admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)}
+                `
+            },
+            {
+                "webWorkers":`
+                For creating web worker you can use CLI command.
+
+                ng generate webWorker my-worker
+                `
+            },
+            {
+                "ivyAdv":`
+                Advantages of Angular 8 Ivy
+
+                Smaller bundles
+                Decreased payload size
+                Pre-compiled code
+                Enhanced backwards compatibility
+                Faster rebuild times
+                Improved template type checking`
+            }
+
+        ]
+    }
+]

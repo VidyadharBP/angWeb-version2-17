@@ -1,0 +1,45 @@
+
+To use Ag-grid in Angular application
+install the grid by useing following command 
+    npm install ag-grid-angular
+
+ Add ag-grid style to style.css 
+ /* Core Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+or in angular.json style
+'ag-grid-community/styles/ag-grid.css'
+'ag-grid-community/styles/ag-theme-quartz.css'
+
+[defaultColDef] = used for gives default width make all columns take full width
+
+in coldef we will use headerName property to provide custom header name for the table columns
+
+cellrenderer  it is function used to render the actual value with formatting
+Exm : Adding cellRenderer for perticular field
+    {field: "id", headerName:"Emp-id", cellRenderer:(data:any)=>{
+      return "Emp-"+data.value
+    }},
+
+filter: true,
+filter a specific column 
+
+editable:true
+makes a specific column to be editable
+
+checkboxSelection:true 
+create a check box for each row to select it is a single row selecton
+
+for multi row selection
+in html
+[rowSelection]="rowSelection" in ag-grid-angular tag
+and in ts field
+public rowSelection: "single"|"multiple" = "multiple";
+
+headerCheckboxSelection:true,
+will create header checkbox for perticular column and it will select all rows on a single click
+
+[pagination]="true" in ag-grid-angular tag
+will add a pagination in ag-grid

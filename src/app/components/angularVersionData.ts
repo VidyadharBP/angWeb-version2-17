@@ -456,3 +456,453 @@ export const angular8 = [
         ]
     }
 ]
+
+export const angular10 = [
+    {
+        "version10":[
+            {
+                "matDatePicker":`
+                <mat-form-field>  
+                    <mat-label>Enter a date range</mat-label>  
+                    <mat-date-range-input [rangePicker]="picker">  
+                        <input matStartDate matInput placeholder="Start date">  
+                        <input matEndDate matInput placeholder="End date">  
+                    </mat-date-range-input>  
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>  
+                    <mat-date-range-picker #picker></mat-date-range-picker>  
+                </mat-form-field> 
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular12 = [
+    {
+        "version12":[
+            {
+                "nullishing":`
+                For example,
+
+                {{age !== null && age !== undefined ? age : calculateAge() }}
+
+                {{age ?? calculateAge() }}
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular13 = [
+    {
+        "version13":[
+            {
+                "dynamicCom":`
+
+                // Before Angular 13
+
+                @Directive({ … })
+
+                export class Test {
+                    constructor(private viewContainerRef: ViewContainerRef,private componentFactoryResolver: 
+                        ComponentFactoryResolver) {}
+                    createMyComponent() {
+                    const componentFactory = this.componentFactoryResolver.
+                             resolveComponentFactory(MyComponent);
+    
+                        this.viewContainerRef.createComponent(componentFactory);
+                     }
+                }
+
+                //In Angular 13
+
+                @Directive({ … })
+                export class Test {
+                    constructor(private viewContainerRef: ViewContainerRef) {}
+                    createMyComponent() {
+                        this.viewContainerRef.createComponent(MyComponent);
+                    }
+                }
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular14 = [
+    {
+        "version14":[
+            {
+                "stansAlone":`
+                import { Component } from '@angular/core';
+                import { CommonModule } from '@angular/common';
+                import { bootstrapApplication } from '@angular/platform-browser';
+
+                @Component({
+                    selector: 'app-root',
+                    standalone: true,
+                    imports: [
+                        // import standalone Components, Directives, and Pipes
+                        CommonModule // and NgModules
+                    ],
+                    template:
+                    <div>{{name}}</div>
+                })
+                export class SampleComponent {
+                    name = "Angular 14";
+                }
+                // Bootstrap a new Angular application using our SampleComponent as a root component.
+                bootstrapApplication(SampleComponent);
+                `
+
+                    
+            },
+            {
+                "typedForm":`
+                     export class SampleComponent {
+                        var contactForm = new FormGroup({
+                        name: new FormControl<string>('', { nonNullable: true }),
+                        email: new FormControl<string>('', { nonNullable: true }),
+                        contactNumber: new FormControl<number>(0, { nonNullable: false })
+                    });
+                }
+                `
+            },
+            {
+                "routeTitle":`
+                const routes: Routes = [{
+                    path: 'home',
+                    component: HomeComponent
+                    title: 'Home page'  // <-- Page title
+                }, 
+                {
+                    path: 'about',
+                    component: AboutComponent,
+                    title: 'About page'  // <-- Page title
+                }
+            ];
+                `
+            },
+            {
+                "optionalInj":`
+                    const injector = ...; // Custom injector providing specific services
+                    this.viewContainerRef.createEmbeddedView(templateRef, { injector });
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular15 = [
+    {
+        "version15":[
+            {
+                "stand":`
+
+                @Component({
+                    selector: 'app-my-component',
+                    standalone: true,
+                    template: <h1>Hello from a standalone component!</h1>,
+                  })
+                  export class MyComponent {}
+
+
+                //The standalone APIs allow you to bootstrap an application using a single component  
+                  import {bootstrapApplication} from '@angular/platform-browser';
+                  import {ImageGridComponent} from'./image-grid';
+                  
+                  @Component({
+                    standalone: true,
+                    selector: 'photo-gallery',
+                    imports: [ImageGridComponent],
+                    template: 
+                      … <image-grid [images]="imageList"></image-grid>
+                    ,
+                  })
+                  export class PhotoGalleryComponent {
+                    // component logic
+                  }
+                  
+                  bootstrapApplication(PhotoGalleryComponent);  
+                `
+            },
+            {
+                "routes":`
+            // Declareing root route
+
+                export const appRoutes: Routes = [{
+                    path: 'lazy',
+                    loadChildren: () => import('./lazy/lazy.routes')
+                      .then(routes => routes.lazyRoutes)
+                  }];
+
+            //Where lazyRoutes are declared in
+
+                  import {Routes} from '@angular/router';
+                  import {LazyComponent} from './lazy.component';
+
+                export const lazyRoutes: Routes = [{path: '', component: LazyComponent}];
+
+            // register the appRoutes in the bootstrapApplication call
+
+                bootstrapApplication(AppComponent, {
+                    providers: [
+                      provideRouter(appRoutes)
+                    ]
+                  });
+                `
+            },
+            {
+                "dComApi":`
+                @Component({
+                    selector: 'mat-menu',
+                    hostDirectives: [HasColor, {
+                      directive: CdkMenu,
+                      inputs: ['cdkMenuDisabled: disabled'],
+                      outputs: ['cdkMenuClosed: closed']
+                    }]
+                  })
+                  class MatMenu {}
+
+                  Above code MatMenu with two directives: HasColor and CdkMenu
+                  MatMenu reuses all the inputs, outputs, and associated logic with HasColor and only the logic and the selected inputs from CdkMenu
+                `
+            },
+            {
+                "ngOptimize":`
+                    import { NgOptimizedImage } from '@angular/common';
+
+                    // Include it into the necessary NgModule
+                    @NgModule({
+                    imports: [NgOptimizedImage],
+                    })
+                    class AppModule {}
+
+                    // ... or a standalone Component
+                    @Component({
+                    standalone: true
+                    imports: [NgOptimizedImage],
+                    })
+                    class MyStandaloneComponent {}
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular16 = [
+    {
+        "version16":[
+            {
+                "angSignal":`
+
+                    import { Component, computed, effect, signal } from '@angular/core';
+                    import { CommonModule } from '@angular/common';
+                    import { bootstrapApplication } from '@angular/platform-browser';
+
+                    @Component({
+                    selector: 'my-app',
+                    standalone: true,
+                    imports: [CommonModule],
+                    template: 
+                        <h1>Calculate Area</h1>
+                        <p>Answer : {{ area() }}</p>
+                        <button (click)="calculateArea(10,10)">Click</button>
+                    ,
+                    })
+
+                    export class App {
+                        height = signal(5);
+                        width = signal(5);
+                        area = computed(() => this.height() * this.width());
+                        constructor() {
+                        effect(() => console.log('Value changed:', this.area()));
+                        }
+                        calculateArea(height: number, width: number) {
+                        this.height.set(height);
+                        this.width.set(width);
+                        }
+                    }
+                `
+            },
+            {
+                "ssr":`
+                import {
+                    bootstrapApplication,
+                    provideClientHydration,
+                   } from '@angular/platform-browser';
+                   
+
+                   bootstrapApplication(RootCmp, {
+                    providers: [provideClientHydration()]
+                   });
+                `
+            },
+            {
+                "routeParams":`
+                //in appConfig 
+
+                provideRouter(routes, withComponentInputBinding()); 
+
+                //In component
+
+                @Component({...}) 
+
+                export class SearchComponent { 
+
+                    @Input() id!: string;   -->id name same as params in Url 
+                    @Input() searchDetails!: SearchDetails 
+
+                } 
+                `
+            },
+            {
+                "reqParams":`
+                export class App {
+                    @Input({ required: true }) name: string = '';
+                  }
+                  
+                  // or
+                  @Component({
+                    ...
+                    inputs: [
+                      {name: 'name', required: true}
+                    ]
+                  })
+                `
+            },
+            {
+                "desRef":`
+                @Component({...})
+                    export class AppComponent {
+                    constructor() {
+                        inject(DestroyRef).onDestroy(() => {
+                        // Writte your cleanup logic
+                        })
+                    }
+                }
+                `
+            }
+
+        ]
+    }
+]
+
+export const angular17 = [
+    {
+        "version17":[
+            {
+                "if":`
+
+                // Before Angular 17
+
+                <div *ngIf="loggedIn; else anonymousUser">
+                    The user is logged in
+                </div>
+                <ng-template #anonymousUser>
+                    The user is not logged in
+                </ng-template>
+
+                //In Angular 17
+
+                <ul> 
+
+                @if (isLoggedIn) { 
+                    <li>Welcome, {{ username }}</li> 
+
+                } @else { 
+                    <li><a href="/login">Sign In</a></li> 
+                } 
+
+                </ul> 
+
+                We can provide @else if also its not possible previously. 
+                `
+            },
+            {
+                "for":`
+                <ul> 
+                    @for (let product of products) { 
+                        <li>{{ product.name }} - {{ product.price }}</li> 
+                    } 
+                </ul> 
+
+                @for loop also has a shortcut for collections with zero items via an optional @empty block. 
+                `
+            },
+            {
+                "switch":`
+                <div @switch (rating) { 
+
+                    @case (1) { <p>Very poor</p> } 
+                  
+                    @case (2) { <p>Poor</p> } 
+                  
+                    @case (3) { <p>Okay</p> } 
+                  
+                    @case (4) { <p>Good</p> } 
+                  
+                    @case (5) { <p>Excellent</p> } 
+                  
+                    @default { <p>No rating</p> } 
+                  
+                  </div> 
+                `
+            },
+            {
+                "defer":`
+                @defer { 
+
+                    <div>My deferred content</div> 
+                  
+                  } 
+                `
+            },
+            {
+                "defPlaceholder":`
+
+                @defer { 
+
+                    <child-app>My deferred content</child-app> 
+                    
+                    } @placeholder { 
+                    
+                    <span>Placeholder content</span> 
+                    
+                    } @loading { 
+                    
+                    <span>Loading deferred content...</span> 
+                    
+                    } 
+
+                // defer with onTimer 
+                        
+                @defer (on timer(5000)) {
+                    <h2 class="text-center">This is Ang-17 New Feature Defer content displaying after 5 second using Timer(5000)...</h2>
+                } @placeholder {
+                    <h2 class="text-center">Placeholder..........</h2>
+                  }
+  
+                // defer with viewport
+                @defer (on viewport) {
+                    <h2 class="text-center">This is Ang-17 New Feature Defer content displaying using viewport...</h2>
+                } 
+                
+                //defer with interaction
+                @defer (on interaction) {
+                    <h2 class="text-center">This is Ang-17 New Feature Defer content displaying using interaction...</h2>
+                  }
+                  @placeholder {
+                    <h2 class="text-center">Placeholder..........</h2>
+                  }
+                `
+            }
+
+        ]
+    }
+]

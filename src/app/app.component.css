@@ -1,0 +1,19 @@
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar stays on top of other elements */
+  }
+
+  .nav-pos{
+    max-height: 400px; /* Set the maximum height for the container */
+    overflow-y: auto;
+  }
+
+  .scrTmp {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }

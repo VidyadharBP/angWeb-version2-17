@@ -1,31 +1,30 @@
 <div class="container-fluid">
-  <!-- <div class="jumbotron">
-    <h1>Hello Angular..</h1>
-    <button type="button" class="btn btn-primary btn-sm"> BootStrap-Btn</button>
-  </div> -->
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary  m-2 p-2">
-    <div class="navbar-brand fs-4">
-      <!-- <img src="https://www.google.com/save/list/aqKpIV26TNGiGv4RCtNygAk1mdHeUQ?hl=en" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-       Angular Features With Different Versions</div>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      https://www.google.com/save/list/aqKpIV26TNGiGv4RCtNygAk1mdHeUQ?hl=en
-    </button> -->
-    <div class="collapse navbar-collapse justify-content-end">
-      <ul class="navbar-nav fs-5">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="features">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="grid">Ag-Grid</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <mat-toolbar>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-nav">
+    
+      <div class="navbar-brand fs-4 ">
+        <!-- <img src="../assets/images/angulart2-dark.png" width="100" height="50" class="align-top" alt=""> -->
+        Angular Features With Different Versions
+      </div>
+      <!-- <img src="../assets/images/angulart2-dark.png" width="600" height="50" class="align-top" alt=""> -->
+      <div class="justify-content-end">
+        <ul class="navbar-nav fs-5">
+          <li class="nav-item active">
+            <a class="nav-link " routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="grid">Ag-Grid</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <img src="../assets/images/angulart2-dark.png" width="100" height="50" class="align-top" alt=""> -->
+      
+    </nav>
+  </mat-toolbar>
+  <div class="container-fluid bg-dark "><router-outlet></router-outlet></div>
 </div>
-<div class="container-fluid"><router-outlet></router-outlet></div>
+
 

@@ -1,6 +1,6 @@
 
 <!-- Angular version 2 -->
-<mat-accordion>
+<mat-accordion class="m-2">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title class="fs-5">
@@ -12,6 +12,7 @@
       </mat-expansion-panel-header>
       <p class="fs-6">It is no longer actively supported or maintained</p>
       <p class="fs-6">Before Angular 2 AngularJs was used and it has features like controllers, $scope, $scope variables, etc in angular this features are replaced by Components, Directives</p>
+      <p class="fs-6">Angular2 uses TypeScript 1.8 version</p>
     </mat-expansion-panel>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -26,11 +27,12 @@
       
       <div class="row bg-dark text-white m-2">
         <h2>Components</h2>
+        <p class="fs-6">Components are the fundamental building blocks of user interfaces in Angular applications. They contains a specific view and its related logic, promoting modularity, reusability, and maintainability within our code.</p>
         <p class="fs-6">Components are the logical piece of code contains the bussiness logic each component consist of Template, Class, MetaData</p>
-             <p class="fs-6">Template : Contains View displayed on the Dom. <br>
-              Class : Contains the bussiness logic properties and methods and this will support the View<br>
-              MetaData : It tells about extra information about the component like template,style etc
-            </p>
+             <p class="fs-6">Template : Contains View displayed on the Dom. Defines the visual layout of the component using HTML elements and directives and Implements the component's behavior and interacts with data and other components.</p>
+             <p class="fs-6"> Class : Contains the bussiness logic properties and methods and this will support the View</p>
+             <p class="fs-6"> MetaData : It tells about extra information about the component like template,style etc</p>
+             <p class="fs-6">CSS styles (optional): Styles the appearance of the component.</p>
             <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[0].component}}</pre>
@@ -42,6 +44,12 @@
         <p class="fs-6">Modules are the building block of application they contains the information of Components,Service and if they are using other module then there information</p>
         <p class="fs-6">Every application consist of at least one module that is Root Module that bootstraps our application</p>
         <p class="fs-6">we have Feature modules These modules they represent features or functionalities within our application They import necessary components, directives, services, and pipes specific to that feature</p>
+        <p class="fs-6">
+          In Angular, modules play a crucial role in organizing and structuring your application code. They serve as containers that group related components, directives, pipes, and services, ensuring modularity, maintainability, and reusability.</p>
+          <h2>Types of modules:</h2>
+          <p class="fs-6">Root module : The main module bootstrapping your application. It usually imports the BrowserModule and defines the root component that acts as the entry point.</p>
+          <p class="fs-6">Feature modules: Modules grouping components, directives, pipes, and services related to a specific feature or functionality. These modules can be lazy loaded as needed.</p>
+          <p class="fs-6">Shared modules: Modules containing reusable components, directives, and pipes that can be shared across different features.</p>
             <mat-card class="text-black fs-6">
                 <mat-card-content> 
                     <pre>{{this.angular2Data[0].ver2Component[1].module}}</pre>
@@ -50,26 +58,46 @@
       </div>
       <div class="row bg-dark text-white m-2">
         <h2>Directives</h2>
-        <p class="fs-6">Directives are the custom html element they are used to add or remove the element and we can make the change on the element</p>
+        <p class="fs-6">Directives are the custom html element they are used to add or remove the element and we can make the change on the element.</p>
+        <p class="fs-6"> directives are special classes that add new behavior or modify existing behavior of elements in your templates. </p>
         <p class="fs-6">Directives will power up the html</p>
-        <div class="row bg-dark text-white m-2">
-            <h2>*ngIf</h2>
-            <p class="fs-6">The ngIf will used to add or remove the element from the Dom it will add the element if its get true value else it will remove the element</p>
-                <mat-card class="text-black fs-6">
-                    <mat-card-content> 
-                        <pre>{{this.angular2Data[0].ver2Component[2].directivengIf}}</pre>
-                    </mat-card-content>
-                  </mat-card>    
-        </div>   
-        <div class="row bg-dark text-white m-2">
-            <h2>*ngFor</h2>
-            <p class="fs-6">The ngFor will used to display the iterated data over the element in the Dom it will add the element based on condition on the for loop</p>
-                <mat-card class="text-black fs-6">
-                    <mat-card-content> 
-                        <pre>{{this.angular2Data[0].ver2Component[3].directivengfor}}</pre>
-                    </mat-card-content>
-                  </mat-card>    
-        </div>   
+        <h2>Types of Directives </h2>
+        <p class="fs-5">1 : Structural Directives :- These directives manipulate the layout of our DOM by adding, removing, or transforming elements based on certain conditions.</p>
+        <p class="fs-6">*ngIf: conditionally includes or removes an element based on a boolean expression.</p>
+        <p class="fs-6">*ngFor: iterates over a collection and creates a template for each item.</p>
+        <p class="fs-6">*ngSwitch: displays different templates based on the value of an expression.</p>
+        <p class="fs-5">2 : Attribute Directives:- These directives modify the appearance or behavior of individual elements.</p>
+        <p class="fs-6">[routerLink]: adds navigation capabilities to elements linked to different routes.</p>
+        <p class="fs-6">[disabled]: disables an element based on a boolean expression.</p>
+        <p class="fs-6">[style.color]: dynamically sets the color of an element's text.</p>
+        <p class="fs-5">3 : Component Directives:- hese directives are essentially components themselves, but are used for specific purposes</p>
+        <p class="fs-6">ngModel: enables two-way data binding between form elements and component properties.</p>
+        <p class="fs-6">router-outlet: defines where routed components are inserted in the DOM.</p>
+
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+            <div class="row bg-dark text-white m-2">
+              <h2>*ngIf</h2>
+              <p class="fs-6">
+                NgIf is a structural directive in Angular that conditionally includes or removes a template based on the truthy value of an expression. It's commonly used to control the visibility of elements in your HTML template, making your UI dynamic and reactive.</p>
+                <p class="fs-6">*ngIf tells Angular to evaluate the condition expression. If the expression is truthy the content within the element will be included in the DOM. Otherwise, it will be removed.</p>
+                  <mat-card class="text-black fs-6">
+                      <mat-card-content> 
+                          <pre>{{this.angular2Data[0].ver2Component[2].directivengIf}}</pre>
+                      </mat-card-content>
+                    </mat-card>    
+            </div>
+            <div class="row bg-dark text-white m-2">
+              <h2>*ngFor</h2>
+              <p class="fs-6">*ngFor, is a powerful structural directive in Angular it allows you to iterate over a collection of items and dynamically create templates for each item. It's essential for displaying lists, tables, and any other UI elements that require repeated content based on data.</p>
+                  <mat-card class="text-black fs-6">
+                      <mat-card-content> 
+                          <pre>{{this.angular2Data[0].ver2Component[3].directivengfor}}</pre>
+                      </mat-card-content>
+                    </mat-card>    
+            </div>
+          </mat-card-content>
+        </mat-card>       
       </div>
       <div class="row bg-dark text-white m-2">
         <h2>Data Display</h2>
@@ -496,5 +524,660 @@
     </mat-expansion-panel>
   </mat-accordion>
   
+  <!-- Angular version-9  -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-9
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in February 2020
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6"> Oneof the major problem of the previous versions of Angular is the large size of the final bundle which impacts the download time and as a result the overall performance of the application so Angular 9 brings a new features which provides a huge boost in performance.</p>
+        <p class="fs-6"> It supports TypeScript version 3.7</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 9 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Default Ivy Compiler</h2>
+        <p class="fs-6">Introduced Ivy render engine by default it uses AOT compilation Here application compiles during the build time and it actually designed to solve the major problems of Angular i.e the performance and large file size and application compiles at build time it helps to detect the bugs earlier in the development process</p>
+        <p class="fs-6">Render engine is a combination of Compilation Runtime and Change-detection before angular9 Compilation and rendering worked with View engine and JIT compilation Initially we have AOT compilation as a option in tsconfig.json we need to set this option true</p> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Smaller Bundle Sizes And Enhanced Performance</h2>
+        <p class="fs-6">Ivy brought significant reductions in bundle sizes, leading to faster loading times and improved performance, especially on mobile devices.Faster rendering and change detection due to a more efficient approach to component updates.</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Improved Debugging and Error Checking</h2>
+        <p class="fs-6">Ivy's structure made debugging more easier and allowing developers to pinpoint issues within components themselves due to AOT compilation will caught errors in compile time so it is better to caught error in compile time as compared to run time so will solve easily</p>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Enhanced Language Service</h2>
+        <p class="fs-6">Better IDE Support : Improved integration with development environments like VS Code and WebStorm, providing more accurate autocomplete and error checking.</p>
+        <p class="fs-6" >Consistency : More consistent link and style URL definitions in templates, improving overall reliability.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2> Improved Testing</h2>
+        <p class="fs-6">One of the APIs for testing Angular apps is called TestBed Previously the new version had a function called testbed.get() which stopped taking string values after version 8 To solve the security issue, the team came up with a solution called testbed.inject() and removed the get function</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Changes with Angular Forms </h2>
+        <p class="fs-6">There are some form changes in forms ngForm is no longer a valid we can use ng-form instead and FormsModule.withConfig has been deprecated, and we can now use FormsModule directly</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 10 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-10
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in June 2020
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6"> This is a major release that extends to the entire platform, including Framework, Angular Material, and CLI. This release is smaller than normal</p>
+        <p class="fs-6"> It supports TypeScript version 3.9</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 10 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>New Date Range Picker</h2>
+        <p class="fs-6">Angular 10 has introduced a new date range picker. If you want to use the new date range picker, you can easily do it by using the mat-date-range-input and mat-date-range-picker components.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular10Data[0].version10[0].matDatePicker}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Optional Stricter Settings</h2>
+        <p class="fs-6">Angular 10 provides a stricter project setup when you create a new workspace in Angular 10 by using the ng new command enabling this feature, our new project initializes some settings that improve your app's overall features such as maintainability, find bugs ahead of time and allow the CLI to perform advanced optimizations on your app.</p>
+        <p class="fs-5">ng new --strict </p>   
+        <p class="fs-6">It enables strict mode in TypeScript.</p>
+        <p class="fs-6">It turns template type checking to Strict.</p>
+        <p class="fs-6">By enabling the strict flag, the default bundle budgets have been reduced by upto 75%.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Keeping Up to Date with the Ecosystem</h2>
+        <p class="fs-5">The most important updated dependencies in Angular 10 are</p>
+        <p class="fs-6">TypeScript is updated to TypeScript 3.9</p>
+        <p class="fs-6">TSLib has been updated to v2.0</p>
+        <p class="fs-6">TSLint has been updated to v6</p>    
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Deprecations and Removals</h2>
+        <p class="fs-6">It makes the new version very light and saves at least 119MB of download and install time when you run npm install for Angular packages and libraries.</p>
+        <p class="fs-6" >Angular 10 features TypeScript 3.9. As opposed to the previous version, which supported typescript 3.6, 3.7, and even 3.8.</p>
+        <p class="fs-6" >In Angular 10, any down leveling to support ES5 will be done at the end of the build process.</p>
+        <p class="fs-6" >Angular 10 also deprecated the older browsers such as IE 9, 10, and Internet Explorer Mobile based on heavy consultation with the community.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Other Updates</h2>
+        <p class="fs-5">Performance Improvements</p>
+        <p class="fs-6" >Angular 10 has witnessed a reduction in the size of the entry-points, leading to an improvement in performance. The caching of the dependencies and the calculation of basePaths further aids in improving the performance.</p>
+        <p class="fs-5" >Compiler Update</p>
+        <p class="fs-6" >The latest Angular version has added a compiler interface that wraps the actual ngtsc compiler. There are some additional features to the metadata like the Dependency information, ng-content selectors, Angular Language Service. These features propagate  the precise cost span in an ExpressionBinding of a micro syntax expression.</p>
+        <p class="fs-5" >Ngcc</p>
+        <p class="fs-6" >The usage of the A Program-based entry-point finder in Angular 10 helps the entry-point finder to reach a program that is characterized by a tsconfig.json record. This choice catalyzes the cycle in places that are introduced with a relatively small number of entry points brought into that application. Consequently, this helps in manifesting and reducing the file size of the entry-point.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 11 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-11
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in November 2020
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Introduced several new features designed to improve performance, development experience, and code maintainability Enhanced Build Speed. Angular 11 also brings in speed-optimized development and build cycles with the NGCC compiler and TypeScript v4.0 The ngcc compiler renders 4 times faster updates in Angular 11, resulting in faster builds and less time taken for rebuilds.</p>
+        <p class="fs-6"> It supports TypeScript version 4.0</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 11 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Updated HMR Support</h2>
+        <p class="fs-6">HMR or Hot Module Replacement is an mechanism that allows the replacement of modules without a browser refresh HMR has been around in the last few versions of Angular and developers have used it to simplify their experience Angular 11 improves on all previous versions to offer support to incorporate and enable HMR to initiate an application</p>
+        <p class="fs-5">The following command will get developers started </p>
+        <p class="fs-6">ng serve --hmr </p> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Automation in Fonts In-Lining</h2>
+        <p class="fs-6">Angular 11 also comes with enhanced features to automatically inline fonts during coding. This addition helps convert Google Icon and Fonts directly Inline in our index html. This feature is enabled by default in Angular 11</p> 
+        <p class="fs-6">Set "inlineFonts": true in your angular.json under the build options.</p>
+        <p class="fs-6">Angular CLI will download and inline used Google Fonts and Icons during the build process. This inlines the font styles directly into the HTML, eliminating separate font requests.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Updated Language Service Preview</h2>
+        <p class="fs-6">Angular 11 comes with the Angular Language Service feature that provides developers with a set of functional tools to enhance productivity within the environment. The new language service is based on View Engine, and provides a more powerful experience to developers.</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Faster Build Periods</h2>
+        <p class="fs-6"> Faster development and CI/CD pipelines.The updated ngcc compiler (4x faster) and TypeScript 4.0 support offer significant build time improvements. This means faster rebuilds and less waiting time for developers.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Improved Logging and Reporting</h2>
+        <p class="fs-6">The Component Test Harnesses gives a powerful and clear API surface that assists with testing the Angular Material components. It gives an approach to developers to communicate with Angular Material parts by utilizing the upheld API while testing. This feature was first introduced in Angular 9.  The difference between Angular 9 and Angular 11 with the Component Test Harnesses is that Angular 11 comes with a parallel function, performance improvements, and new APIs. The manual change detection function, helps the developers to disable the automatic change detection in unit tests as well as access the finer-grained control of change detection.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Component Test Harnesses</h2>
+        <p class="fs-6">Angular version 11 significantly improves the logging and reporting process for developers. This improvement has been made possible through changes to the builder phase reporting process.</p>
+        <p class="fs-6">New CLI updates by Angular will also help make the reports and logs easier to read This will come as a significant boost for developers working on Angular 11 as a faster and more efficient way of reading reports and logs</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Webpack 5 Support</h2>
+        <p class="fs-6">Angular 11 improves on previous versions to offer experimental Webpack 5 support to users. A Webpack is basically used by developers to incorporate and save multiple documents in a single record or bundle online. This not only saves time, but also minimizes effort</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Upgrade to ESLint</h2>
+        <p class="fs-6">Angular 11 performance improvements support deprecation of the use of TSLint and Codelyzer which have been shipping a default implementation for linting in the previous versions.  It is one of the most important changes in Angular version 11.  Angular developers seem to deprecate the use of the TSLint and instead recommend migration to ESLint. The Angular developers have ensured a smooth transition by collaborating to the supported linting stack</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Router</h2>
+        <p class="fs-6">Angular 11 performance improvements support deprecation of the use of TSLint and Codelyzer which have been shipping a default implementation for linting in the previous versions.  It is one of the most important changes in Angular version 11.  Angular developers seem to deprecate the use of the TSLint and instead recommend migration to ESLint. The Angular developers have ensured a smooth transition by collaborating to the supported linting stack</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Forms</h2>
+        <p class="fs-6">The amendments made in Angular 11 have improved the typing for validators and asyncValidators that were earlier not available. Type of AbstractFormControl.parent in Angular 11 incorporates null that is remembered for the sorts of .parent. Angular version 11 migration adds the non-null assertion operator wherever it's required.  The async validators in The FormControl, FormGroup and FormArray class that were initially defined at the initialization time are now emitted into the statusChanges observable.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 12 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-12
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in May 2021 
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Angular 12 offers many improvements in performance, compilers, language services, form validation and much more. The deprecation of the View engine and addition of the Ivy ecosystem is certainly one of the major enhancements considered in version 12</p>
+        <p class="fs-6"> It supports TypeScript version 4.2</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 12 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Ivy Everywhere</h2>
+        <p class="fs-6">Angular 12 is finally deprecating its old legacy compilation and rendering pipeline called the View Engine. The next release will eliminate the rendering pipeline. Libraries previously working with View Engine will then function with Ivy.With the help of a compatibility compiler and a smooth update path, the entire ecosystem will shift to Ivy and it will make Angular 12 much more efficient.</p> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Migrating from legacy i18n message IDs</h2>
+        <p class="fs-6">Since Angular version 11, new tasks are normally intended to use the new message ids and they as of now have the tooling to move existing endeavors with existing interpretations. In the current version, there are diverse legacy message-id plans being used in the i18n system. These inheritance message-ids are fragile as issues can arise subject to whitespace and the getting sorted out organizations and ICU articulations. To handle this issue the community is moving away from them. The new standard message-id configuration is significantly more extreme and common. This arrangement will lessen the pointless interpretation invalidation and related retranslation cost in applications where interpretations don't facilitate due to whitespace changes</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Protractor</h2>
+        <p class="fs-6">The fate of the protractor is now with the Angular team and the community. They are currently now investigating the input shared in the RFC and figuring out the best future for Protractor. The group has decided to prohibit it in new tasks and, in light of everything, furnish alternatives with acclaimed outsider arrangements in the Angular CLI. The group is as of now working with Cypress, WebdriverIO, and TestCafe to help angularjs development company with getting elective arrangements. More information to come as this develops.</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Nullish coalescing</h2>
+        <p class="fs-6">This new version provides a nullish coalescing operator (??) to write cleaner code for conditionals.</p>
+        <p class="fs-6" >Angular 12 allows nullish coalescing utilization for its templates. By using nullish coalescing operators (??) developers can write cleaner code At the same time, nullish coalescing allows developers to improve complex conditionals by using the new syntax structure.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular12Data[0].version12[0].nullishing}}</pre>
+          </mat-card-content>
+        </mat-card>  
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Default strict mode</h2>
+        <p class="fs-6" >By enabling strict mode by default in CLI, developers can catch bugs faster in Angular 12 than earlier versions. The strict mode also makes application examinations a lot quicker.</p>
+        <p class="fs-6" >Another critical feature of Angular 12 strict mode is the ng update command refactor. With this update, developers can code securely and accurately while creating a new application or workspace.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>NG API upgrade</h2>
+        <p class="fs-6" >In Angular 12, ng troubleshooting API can give key information about the working of applications during runtime.and added functionalities like getDirectiveMetada and esetProfiler will simplify and thoroughly inspect applications to debug APIs.</p>
+        <p class="fs-6" >The getDirectiveMetada will help in recovering data related to different parts and directives. On the other hand, the esetProfile will help trace template durations, updates, and the runtime of lifecycle hooks.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Styling improvements</h2>
+        <p class="fs-6" >Angular received a some of styling improvements in this version. Firstly,  support for inline Sass is available in the component decorator-style field. Additionally, Angular Material and Angular CDK have internally adopted a new Sass module framework. Finally, angular 12 now also supports Tailwind CSS. </p>
+        <p class="fs-6" >Other updates in Angular 12 include the addition of minified UMDs, redirected source files, strict null checks, emit event option, HTTP status codes, and Webpack 5 support</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 13 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-13
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in November 2021
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Angular 13 this framework now includes a persistent build-cache as a default feature, which saves built-in results to disk. As a result, the development process will be accelerated. Furthermore, you have complete control over enabling or disabling this feature in existing Angular apps.</p>
+        <p class="fs-6"> It supports TypeScript version 4.4</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 13 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>View Engine is no longer available</h2>
+        <p class="fs-6">View Engine is no longer supported by the latest version Angular 13. depending on View Engine has its maintenance costs, and also increases the complexity of Angular 13 codebases. To avoid that Ivy is now the only view engine supported by Angular. Some existing libraries will be automatically migrated to partial compilation mode due to this change, and some metadata previously required for the legacy View Engine will also be removed. Ivy can now compile individual components independently of one another, which significantly improves performance. By removing View Engine.</p> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Changes to the Angular Package Format (APF)</h2>
+        <p class="fs-6">The Angular Package Format (APF) defines the format and structure of Angular Framework packages and View Engine metadata. Its an excellent strategy for packaging every third-party library in the web development environment</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Removal of IE 11 Support</h2>
+        <p class="fs-6">Angular 13 no longer supports IE11. CSS code paths, build passes, polyfills, special JS, and other parameters that were previously required for IE 11 have now been completely dropped off. As a result, Angular has grown faster, and it is now easier for Angular to use new browser features like CSS variables and web animations using native web APIs.</p>   
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>NodeJS Support and Version 7.4 of RxJS</h2>
+        <p class="fs-6">Node.js versions prior to 12.20.0 are no longer available in Angular 13. This is because the Angular packages now use the Node.js package export feature with subpath patterns.</p>
+        <p class="fs-6">The Angular 13 update adds RxJS, a reactive extension for JavaScript, and includes all versions of RxJS up to and including version 7. For apps created with ng new, RxJS 7.4 has become the default.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular CLI enhancements</h2>
+        <p class="fs-6" >The Angular CLI is a key component of the Angular. Angular CLI helps standardize the process of handling the complexities of the modern web development ecosystem by minimizing these complexities on a large scale.</p>
+        <p class="fs-6" >With the release of Angular 13, this framework now includes a persistent build-cache as a default feature, which saves built-in results to disk. As a result, the development process will be accelerated. Furthermore, we have complete control over enabling or disabling this feature in existing Angular apps.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Creating dynamic components</h2>
+        <p class="fs-6" >One Ivy-enabled API update in Angular 13 is a more streamlined method for dynamically constructing a component. ViewContainerRef.createComponent no longer requires an instantiated factory to construct a component (you no longer need to use ComponentFactoryResolver). Due to the improved ViewContainerRef.createComponent API, it is now possible to create dynamic components with less boilerplate code.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular13Data[0].version13[0].dynamicCom}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 14 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-14
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in June 2022
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Angular 14 is believed to be the most systematic pre-planned upgrade by Angular. The Angular 14 release new features include CLI auto-completion, typed reactive forms, stand-alone components, directives and pipes, and enhanced template diagnostics.</p>
+        <p class="fs-6"> It supports TypeScript version 4.7</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 14 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Standalone components, directives, and pipes</h2>
+        <p class="fs-6">Angular 14, we can create a module-less Angular application using the standalone flag.</p>
+        <p class="fs-6">In Angular 13 and older, the NgModule contained component configurations like imports, declarations, pipes, and directives, so there was a need to add NgModule as a separate file. However, in Angular 14, we can create standalone components without NgModule.</p> 
+        <p class="fs-6">To enable creating a standalone component, you must add the standalone flag (standalone: true) inside the component decorator and add all the configurations inside the decorator. The root component should be passed as an argument to the bootstrapApplication</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular14Data[0].version14[0].stansAlone}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Typed Angular forms</h2>
+        <p class="fs-6">When it comes to Angular, there are two distinctive approaches for handling the forms. They can be either created by the template-driven approach or by using the reactive approach.</p>
+        <p class="fs-6">This newly introduced feature of Typed Forms is only applicable to reactive forms. The values inside form controls, groups, and arrays are type safe. It improves the overall “ type” safety of the applications developed using Angular.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular14Data[0].version14[1].typedForm}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Streamlined page title accessibility</h2>
+        <p class="fs-6">Angular 14, we can add the router title without any additional import on the page. we can provide custome name for the specific route page</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular14Data[0].version14[2].routeTitle}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Extended developer diagnostics</h2>
+        <p class="fs-6">The extendable developer diagnostics feature provides extendable frameworks that help developers better understand the templates It helps improve caching before runtime, provide actionable suggestions for a template, and helps diagnose warnings at compile time.</p>
+        <p class="fs-6">Provides improved error messages and warnings directly in the template for easier debugging.</p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Optional injectors in embedded Views</h2>
+        <p class="fs-6" >Angular 14 supports passing in an optional injector when creating an embedded view through ViewContainerRef.createEmbeddedView and TemplateRef.createEmbeddedView. This injector enables customization of dependency injection behavior within the specific template. More control over dependency injection behavior within specific templates.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular14Data[0].version14[3].optionalInj}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular DevTools is now available offline</h2>
+        <p class="fs-6" >The Angular DevTools debugging extension can now be used in offline mode as well. Firefox users can find the extension under Mozilla's Add-ons for Firefox users.</p>
+        <h2>Angular CLI enhancements</h2>
+        <p class="fs-6">Angular 14 has got an amazing feature of autocomplete! Typos are bound to often while typing your code, resulting in command-line errors. To fix this, ng completion in version 14 now includes real-time type-ahead autocompletion!</p>
+        <p class="fs-6">Detailed analytics information using the ng analytics and improved ways to control the cache information using the ng cache are some of the additional features.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 15 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-15
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in November 2022
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Angular Team officially mentioned that removing Angulars legacy compiler and rendering pipeline significantly improved the developer experience. Similarly, considering Angular 14 vs Angular 15. The latest Angular 15 New Features include stable standalone APIs, allowing Angular developers to build apps without the Ng Modules. It also offers less boilerplate code, enhanced performance, directive composition API, and many other updates and features for developers in terms of experience and performance</p>
+        <p class="fs-6"> It supports TypeScript version 4.8</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 15 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Graduated Standalone APIs</h2>
+        <p class="fs-6">Standalone components, directives, and pipes are now officially promoted from experimental to fully-supported features.</p>
+        <p class="fs-6">The Angular Team made sure that the standalone components were compatible with all of Angular and that the standalone APIs were ready to be upgraded. They are currently completely functional with the router, Angular Elements, HttpClient, and other systems.</p> 
+        <p class="fs-6">This version is now stable and developers can directly import the bootstrap application from the platform browser and use it over the component. Developers can even import the functions and use them directly into the pipes.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular15Data[0].version15[0].stand}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Standalone Router API</h2>
+        <p class="fs-6">We can build a multi-route application using the new router standalone APIs</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular15Data[0].version15[1].routes}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Directive Composition API</h2>
+        <p class="fs-6">Combine functionalities from multiple directives without creating new classes, enhancing code reusability and modularity.</p>
+        <p class="fs-6">The directive composition API enables developers to enhance host elements with directives and equips Angular with a powerful code reuse strategy,</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular15Data[0].version15[2].dComApi}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Image Directive (NgOptimized Image) is Now Stable</h2>
+        <p class="fs-6">Image Directive in the new Angular 15 features also includes Automatic srcset generation is the directive that automatically generates the SRC set, which helps to upload and appropriately size the image wherever requested, thereby reducing the download time for the image.</p>
+        <p class="fs-6">Optimize and resize images automatically for efficient loading and improved performance.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular15Data[0].version15[3].ngOptimize}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Better Debug Stack Traces</h2>
+        <p class="fs-6">Now, we can trace the code efficiently and simply using the Stack Trace; this feature contributes when facing any error and helps find where this error is experienced or found.</p>
+        <p class="fs-6">Get more informative and accurate error messages for easier debugging.Previously, errors might only show internal names. Now, relevant component/template information is included.</p> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2 >Extended esbuild Support</h2>
+        <p class="fs-6">Leverage esbuild for smaller bundles and faster builds.</p>
+        <h2>CDK Listbox</h2>
+        <p class="fs-6">New interactive component for selecting multiple items with accessibility features.</p>
+        <h2>Automatic Language Service Import</h2>
+        <p class="fs-6">Auto-import necessary modules within templates for better development experience.</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 16 -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-16
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in May 2023
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">The lack of server-side rendering (SSR) support was one of the most significant drawbacks of Angular. Angular 16 has resolved this issue with some significant improvements for server-side rendering and also improved performance, advanced component interaction, streamlined state management, next-generation routing, and enhanced testing and debugging capabilities, Angular 16 offers many opportunities to build powerful and efficient web applications.</p>
+        <p class="fs-6"> It supports TypeScript version 4.9</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 16 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2">
+        <h2>Angular Signal</h2>
+        <p class="fs-6">Signals allows you to retrieve the value (pull) and update or mutate it (push). signal always has a value, and retrieving this value is done synchronously. Angular uses Zone.js for change detection mechanism </p>
+        <p class="fs-6">At the start of an Angular application, the framework overrides certain low-level browser APIs, such as addEventListener, using the Zone.js library. Zone.js is responsible for triggering change detection by listening to various events like clicks, mouseovers, HTTP requests, and timers (setTimeout, setInterval).</p> 
+        <p class="fs-6">Whenever something changes in our application, a change detection process is performed, and page is refreshed. Angular organizes our application as a component tree, where each component is associated with a change detector. By default, when a change occurs in any child component, the entire tree is re-evaluated, regardless of each components dependencies. This process is called dirty checking. </p>
+        <p class="fs-6">Even if your applications change detection is set to OnPush mode, the change detection cycle still traverses the entire component tree. However, with OnPush components that have no change dependencies, they wont be re-evaluated unnecessarily. </p>
+        <p class="fs-6">To enhance the performance of Angulars change detection mechanism Signal pattern will be helpful Using signals change detection will occur at the component level only when the associated signal changes, without the need to traverse the entire component tree or rely on Zone.js Using Signal pattern, Angular aims to improve the efficiency of change detection, leading to better performance. </p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular16Data[0].version16[0].angSignal}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Server-Side Rendering</h2>
+        <p class="fs-6">Angular used destructive hydration for SSR In destructive hydration for SSR when application loads a static DOM will load at initially and it will not interactive when SSR rendering is done pre-Dom will distoyed and replace with new dom resulting in issues like screen flickering and negatively impacting user experience </p>
+        <p class="fs-6">Angular 16 introduces non-destructive hydration to overcome these problems. With non-destructive hydration, the DOM is not destroyed when the client app is downloaded and bootstrapped. Instead, it enhances the existing DOM. Angular 16 this is currently in the developer preview stage. To enable it, you can include provideClientHydration() as a provider when bootstrapping the application.</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular16Data[0].version16[1].ssr}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Route params mapping </h2>
+        <p class="fs-6">before Angular 16, developers had to use the ActivatedRoute service to retrieve URL parameters, query parameters, and associated data. </p>
+        <p class="fs-6">TWith Angular 16 it will no longer be necessary to inject the ActivatedRoute service to retrieve the various route parameters because these can be directly binded to component inputs </p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular16Data[0].version16[2].routeParams}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Required Input </h2>
+        <p class="fs-6">From version 16, making an input required will be a simple configuration object to be passed to the metadata of the input annotation. </p>
+        <p class="fs-6">In some case Previous version we are binding input value to a Perticular Propety if no value passed to it it will throws error at runtime when checking with life cycle hooks ngOnchanges. Using required: true in Angular 16 will get compile time error if no data passed </p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular16Data[0].version16[3].reqParams}}</pre>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>DestroyRef injector </h2>
+        <p class="fs-6">Simplify lifecycle cleanup operations with a new DestroyRef provider</p>
+        <p class="fs-6">Inject DestroyRef into components, directives, and pipes to register cleanup callbacks.</p> 
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+              <pre>{{this.angular16Data[0].version16[4].desRef}}</pre>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Standalone Project Support </h2>
+        <p class="fs-6">Angular 14 started supporting standalone components, which are independent of modules.</p>
+        <p class="fs-6">Angular 16 takes this to the next level by supporting standalone project creation.</p>
+        <p class="fs-6">Angular 16 has a flag to create a standalone project through the Angular CLI. You have to execute ng new command with the standalone flag. Then, it will generate a project without NgModules. </p>
+        <p class="fs-6">ng new --standalone</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- Angular version 17  -->
+  <mat-accordion class="m-3">
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+          Angular Version-17
+        </mat-panel-title>
+        <mat-panel-description class="fs-6">
+          It was released in November 2023
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="fs-6">Angular 17 is a version that brings significant changes to the framework, including a series of improvements and new features that make it more powerful and easier to use. These enhancements make Angular a more attractive option for the development of modern web applications.</p>
+        <p class="fs-6"> It supports TypeScript version 5.2</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="fs-5">
+         Angular Version 17 Features
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="row bg-dark text-white m-2 ">
+        <h2>Built-in Control Flow</h2>
+        <p class="fs-6">Angular compiler transforms the syntax to efficient JavaScript instructions that could perform control flow, lazy loading, and more.</p>
+        <p class="fs-6">It is automatically available in your templates without additional imports</p>
+        <mat-card class="fs-6">
+          <mat-card-content> 
+            <div class="row bg-dark text-white m-2 ">
+              <h2>&commat; if for Conditional Rendering</h2>
+              <p class="fs-6">Replaces *ngIf </p>
+              <p class="fs-6">Syntax:<br>  &commat;if(condition) &lcub; ...Content...&rcub;<br> &commat;else &lcub; ...Content...&rcub; </p>
+              <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular17Data[0].version17[0].if}}</pre>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            
+          </mat-card-content>
+        </mat-card> 
+        <mat-card class="fs-6">
+          <mat-card-content> 
+            <div class="row bg-dark text-white m-2 ">
+              <h2>&commat;for for Looping and Iteration</h2>
+              <p class="fs-6">Replaces  *ngFor. </p>
+              <p class="fs-6">Syntax:<br>  &commat;for (let item of items)  &lcub; ...Content...&rcub;</p>
+              <p class="fs-6">Accesses iterated item properties using item.property</p>
+              <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular17Data[0].version17[1].for}}</pre>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            
+          </mat-card-content>
+        </mat-card> 
+        <mat-card class="fs-6">
+          <mat-card-content> 
+            <div class="row bg-dark text-white m-2 ">
+              <h2>&commat; switch for Multi-Way Selection</h2>
+              <p class="fs-6">Replaces ngSwitch. </p>
+              <p class="fs-6">Syntax:<br> &commat;switch(expression) &lcub; ...Cases...&rcub;</p>
+              <p class="fs-6">Each case uses &commat;case (value) syntax to match against expression value. </p>
+              <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular17Data[0].version17[2].switch}}</pre>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Deferrable views </h2>
+        <p class="fs-6">Angular 17 provides a simple and powerful mechanism for defining ways to tell the browser what to display along with instructions to make your apps faster.</p>
+        <p class="fs-6">future of lazy loading</p>
+        <mat-card class="text-black fs-6">
+          <mat-card-content> 
+            <div class="row bg-dark text-white m-2 ">
+              <h2>Example of the simplest &commat;defer:</h2>
+              <p class="fs-6">This tells the browser to render the rest of the page first, and then the deferred content. </p>
+              <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular17Data[0].version17[3].defer}}</pre>
+                </mat-card-content>
+              </mat-card>
+            </div>
+            <div class="row bg-dark text-white m-2 ">
+              <h2>Example : Placeholder and loading both provide a static layout for the coming content,</h2>
+              <p class="fs-6">Several different strategies are supported by &commat;defer out of the box, like viewport (when the user scrolls it into view), idle (browser is idle), interaction (user interacts with the element), and hover (pointer hovers on element). </p>
+              <p class="fs-6">on immediate — start lazily loading automatically, without blocking the browser </p>
+              <p class="fs-6">on timer(&lt;time &gt;) — delay loading with a timer</p>
+              <p class="fs-6">on viewport and on viewport(&lt;ref&gt;) — viewport also allows to specify a reference for an anchor element. When the anchor element is visible, Angular will lazily load the component and render it. </p>
+              <p class="fs-6">on interaction and on interaction(&lt;ref&gt;) — enables you to initiate lazy loading when the user interacts with a particular element. </p>
+                <p class="fs-6">on hover and on hover(&lt;ref&gt;) — triggers lazy loading when the user hovers an element. </p>
+              <mat-card class="text-black fs-6">
+                <mat-card-content> 
+                    <pre>{{this.angular17Data[0].version17[4].defPlaceholder}}</pre>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </mat-card-content>
+        </mat-card> 
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>SSR and SSG </h2>
+        <p class="fs-6">To enable SSR  ng new my-app --ssr  command we need to use when creating application </p>
+        <p class="fs-6">To add hybrid rendering support to your existing application run   ng add &commat;angular/ssr </p>
+        <p class="fs-6">When application runs on serverside rendering server render satic html page with small js in browser at starting of application and in background it render the js files then later it get bootstraped into it based on user interaction it will rendered the dom </p>
+      </div>
+      <div class="row bg-dark text-white m-2">
+        <h2>Experimental afterNextRender and afterRender Hooks </h2>
+        <p class="fs-6">To improve the performance of Angular SSR and SSG  </p>
+        <p class="fs-6">afterRender — register a callback to be invoked each time the application finishes rendering  </p>
+        <p class="fs-6">afterNextRender — register a callback to be invoked the next time the application finishes rendering </p>
+        <p class="fs-6">Only the browser will invoke these hooks</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 
   

@@ -1,21 +1,4 @@
 
-@media (max-width: 1000px) {
-  .scrn{
-    padding-top: 80px; /* Adapt according to your navbar height */
-  }
-}
-@media (max-width: 750px) {
-  .scrn{
-    padding-top: 100px; /* Adapt according to your navbar height */
-  }
-}
-@media (max-width: 550px) {
-  .scrn{
-    padding-top: 140px; /* Adapt according to your navbar height */
-  }
-}
-
-
 .fixed-nav {
     position: fixed;
     top: 0;
@@ -34,3 +17,16 @@
     top: 0;
     z-index: 1;
   }
+
+  .aboutMe{
+    float: right;
+    margin-left: 40%;
+  }
+
+  .roundRadius{
+    border-radius: 50%;
+}
+
+a {
+  cursor: pointer;
+}

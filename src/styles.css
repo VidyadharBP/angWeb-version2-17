@@ -5,3 +5,48 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media  (max-width: 496px) {
+    /* Styles for screens less than or equal to 767px (mobile phones) */
+    body {
+      font-size: 8px;
+    }
+    .scrn{
+        padding-top: 180px; /* Adapt according to your navbar height */
+      }
+      .fs-5{
+        font-size: 0.75rem;
+      }
+
+     
+  }
+
+@media  (min-width: 496px) and (max-width: 767px) {
+    /* Styles for screens less than or equal to 767px (mobile phones) */
+    body {
+      font-size: 12px;
+    }
+    .scrn{
+        padding-top: 140px; /* Adapt according to your navbar height */
+      }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    /* Styles for screens between 768px and 991px (tablets) */
+    body {
+      font-size: 18px;
+    }
+
+    .scrn{
+        padding-top: 125px; /* Adapt according to your navbar height */
+      }
+  }
+  
+  
+  @media (min-width: 992px) {
+    /* Styles for screens greater than or equal to 992px (desktops) */
+    body {
+      font-size: 20px;
+    }
+    
+  }

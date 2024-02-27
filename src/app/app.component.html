@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <mat-toolbar>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 fixed-nav scrn">
     
-      <div class="navbar-brand fs-4 ">
+      <div class="navbar-brand fs-5">
         <!-- <img src="../assets/images/angulart2-dark.png" width="100" height="50" class="align-top" alt=""> -->
         Angular Features With Different Versions
       </div>
       <!-- <img src="../assets/images/angulart2-dark.png" width="600" height="50" class="align-top" alt=""> -->
-      <div class="justify-content-end">
+      <!-- <div class="justify-content-end"> -->
         <ul class="navbar-nav fs-5">
           <li class="nav-item active">
             <a class="nav-link " routerLink="home">Home</a>
@@ -18,11 +18,18 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="grid">Ag-Grid</a>
           </li>
+          <li class="nav-item li-Right">
+            <a class="nav-link"(click)="openDialog('3000ms', '1500ms')" >About Me</a>
+          </li>
         </ul>
-      </div>
+      <!-- </div> -->
       <!-- <img src="../assets/images/angulart2-dark.png" width="100" height="50" class="align-top" alt=""> -->
-      
+      <!-- <div class="display-block aboutMe">
+        <button class="btn btn-primary m-2" (click)="openDialog('3000ms', '1500ms')">About Me</button>
+        <a class="nav-link" (click)="openDialog('3000ms', '1500ms')">About Me</a>
+      </div> -->
     </nav>
+    
   </mat-toolbar>
   <div class="container-fluid bg-dark m-2 scrn" ><router-outlet></router-outlet></div>
 </div>
